@@ -12,16 +12,28 @@
         change, and a steadier connection with yourself and the people you love.
       </p>
     </div>
+    <figure class="about-preview__image-frame">
+      <img
+        src="/images/about-simone.webp"
+        alt="A warm portrait-style image with gentle light."
+        class="about-preview__image"
+        loading="lazy"
+        width="640"
+        height="760"
+      />
+    </figure>
   </div>
 </section>
 
 <style>
   .about-preview {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.14fr) minmax(220px, 0.7fr);
+    gap: clamp(1rem, 2.5vw, 2rem);
     max-width: 920px;
     padding: clamp(1.6rem, 4vw, 2.6rem);
     position: relative;
+    align-items: start;
   }
 
   .about-preview::before {
@@ -37,5 +49,35 @@
 
   .about-preview .stack {
     padding-left: clamp(0.7rem, 2vw, 1.3rem);
+  }
+
+  .about-preview__image-frame {
+    margin: 0;
+    justify-self: end;
+    width: min(100%, 270px);
+    border-radius: 22px;
+    overflow: clip;
+    border: 1px solid color-mix(in srgb, var(--color-border) 68%, #fff 32%);
+    box-shadow: 0 11px 26px rgba(71, 48, 31, 0.12);
+  }
+
+  .about-preview__image {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(0.88) contrast(0.96);
+  }
+
+  @media (max-width: 820px) {
+    .about-preview {
+      grid-template-columns: 1fr;
+    }
+
+    .about-preview__image-frame {
+      justify-self: start;
+      width: min(100%, 360px);
+    }
   }
 </style>
