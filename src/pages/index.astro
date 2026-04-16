@@ -1,18 +1,29 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import HeroSection from '../components/home/HeroSection.astro';
+import TrustIntroSection from '../components/home/TrustIntroSection.astro';
+import PathwaysSection from '../components/home/PathwaysSection.astro';
+import AboutPreviewSection from '../components/home/AboutPreviewSection.astro';
+import BookFeatureSection from '../components/home/BookFeatureSection.astro';
+import SessionsPreviewSection from '../components/home/SessionsPreviewSection.astro';
+import FinalCtaSection from '../components/home/FinalCtaSection.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	<p>Preview branch test: draft</p>
-	</body>
-</html>
+<BaseLayout
+  title="Pulse Sexology | Intimacy, Connection & Midlife Support"
+  description="A calm, welcoming space for couples and individuals navigating intimacy, relationship challenges, menopause, and sexual wellbeing."
+>
+  <SiteHeader />
+  <main>
+    <HeroSection />
+    <TrustIntroSection />
+    <PathwaysSection />
+    <AboutPreviewSection />
+    <BookFeatureSection />
+    <SessionsPreviewSection />
+    <FinalCtaSection />
+  </main>
+  <SiteFooter />
+</BaseLayout>
