@@ -3,12 +3,14 @@
   --color-surface: #fdfaf5;
   --color-surface-muted: #f0e8dc;
   --color-surface-sage: #e4ebe2;
+  --color-panel: #f7efe4;
   --color-text: #2f2a25;
   --color-text-muted: #5f5a53;
   --color-accent: #7d5f4a;
   --color-accent-soft: #a58872;
   --color-border: #ddd2c3;
   --shadow-soft: 0 12px 28px rgba(67, 45, 26, 0.08);
+  --shadow-panel: 0 16px 34px rgba(64, 44, 28, 0.09);
   --radius-card: 18px;
   --radius-pill: 999px;
   --container-width: min(1100px, calc(100% - 3rem));
@@ -26,7 +28,10 @@ body {
 
 body {
   font-family: "Inter", "Avenir Next", "Segoe UI", sans-serif;
-  background: var(--color-bg);
+  background:
+    radial-gradient(42rem 24rem at 88% 2%, rgba(169, 191, 161, 0.2), transparent 72%),
+    radial-gradient(38rem 22rem at 12% 0%, rgba(196, 160, 128, 0.18), transparent 74%),
+    var(--color-bg);
   color: var(--color-text);
   line-height: 1.65;
 }
@@ -51,15 +56,25 @@ main {
 }
 
 .section {
-  padding: clamp(3.5rem, 7vw, 6rem) 0;
+  position: relative;
+  padding: clamp(3.6rem, 7vw, 6.2rem) 0;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(132, 102, 79, 0.12), transparent);
 }
 
 .section--muted {
-  background: var(--color-surface-muted);
+  background: color-mix(in srgb, var(--color-surface-muted) 88%, #fff 12%);
 }
 
 .section--sage {
-  background: var(--color-surface-sage);
+  background: color-mix(in srgb, var(--color-surface-sage) 86%, #fff 14%);
 }
 
 .section__heading {
@@ -79,8 +94,8 @@ main {
 
 .kicker {
   display: inline-block;
-  font-size: 0.8rem;
-  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-accent);
   margin-bottom: 1rem;
@@ -95,10 +110,10 @@ main {
 }
 
 .card {
-  background: var(--color-surface);
+  background: color-mix(in srgb, var(--color-surface) 88%, #fff 12%);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
-  padding: 1.5rem;
+  padding: 1.6rem;
   box-shadow: var(--shadow-soft);
 }
 
@@ -119,10 +134,10 @@ main {
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-pill);
-  padding: 0.68rem 1.2rem;
+  padding: 0.72rem 1.24rem;
   font-weight: 600;
   border: 1px solid transparent;
-  transition: transform 160ms ease, background-color 160ms ease;
+  transition: transform 160ms ease, background-color 160ms ease, box-shadow 180ms ease;
 }
 
 .btn:hover {
@@ -130,22 +145,30 @@ main {
 }
 
 .btn--primary {
-  background: var(--color-accent);
+  background: linear-gradient(180deg, #89674f 0%, #74513c 100%);
   color: #fff;
+  box-shadow: 0 10px 24px rgba(89, 62, 43, 0.22);
 }
 
 .btn--primary:hover {
-  background: #6f513d;
+  background: linear-gradient(180deg, #7f5d46 0%, #684a37 100%);
 }
 
 .btn--secondary {
   border-color: var(--color-border);
-  background: var(--color-surface);
+  background: color-mix(in srgb, var(--color-surface) 90%, #fff 10%);
 }
 
 .stack {
   display: grid;
   gap: 1rem;
+}
+
+.panel {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: color-mix(in srgb, var(--color-panel) 88%, #fff 12%);
+  box-shadow: var(--shadow-panel);
 }
 
 @media (max-width: 900px) {

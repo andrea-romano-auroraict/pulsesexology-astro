@@ -1,5 +1,5 @@
 <section id="about" class="section section--sage">
-  <div class="container about-preview">
+  <div class="container about-preview panel">
     <div class="stack">
       <p class="kicker">About Simone</p>
       <h2 class="section__heading">Warm, grounded support for couples and individuals</h2>
@@ -19,6 +19,23 @@
   .about-preview {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    max-width: 860px;
+    max-width: 920px;
+    padding: clamp(1.6rem, 4vw, 2.6rem);
+    position: relative;
+  }
+
+  .about-preview::before {
+    content: "";
+    position: absolute;
+    left: clamp(1.1rem, 3vw, 1.9rem);
+    top: clamp(1.1rem, 3vw, 1.9rem);
+    bottom: clamp(1.1rem, 3vw, 1.9rem);
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(125, 95, 74, 0.45), rgba(125, 95, 74, 0.08));
+    border-radius: 4px;
+  }
+
+  .about-preview .stack {
+    padding-left: clamp(0.7rem, 2vw, 1.3rem);
   }
 </style>
