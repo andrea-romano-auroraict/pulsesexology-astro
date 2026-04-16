@@ -1,0 +1,62 @@
+<section id="pathways" class="section pathways">
+  <div class="container">
+    <p class="kicker">Work With Me</p>
+    <h2 class="section__heading">Support pathways for the season you are in</h2>
+    <p class="section__lead">
+      Sessions are thoughtful, practical, and emotionally safe—designed to help you reconnect with yourself and with
+      each other.
+    </p>
+
+    <div class="card-grid">
+      <article class="card pathway-card">
+        <h3>Couples &amp; Intimacy</h3>
+        <p>
+          A warm place to unpack disconnection, communication tension, and changes in desire while building clearer,
+          kinder ways of relating.
+        </p>
+      </article>
+
+      <article class="card pathway-card">
+        <h3>Menopause &amp; Midlife Intimacy</h3>
+        <p>
+          Gentle support for navigating body change, confidence, and shifting relationship dynamics through menopause
+          and midlife.
+        </p>
+      </article>
+
+      <article class="card pathway-card">
+        <h3>Sexual Wellbeing Support</h3>
+        <p>
+          Grounded, respectful conversations to help you make sense of sexual concerns and move toward greater comfort,
+          choice, and ease.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pathways::after {
+    content: "";
+    position: absolute;
+    inset: auto auto 0 0;
+    width: min(28rem, 48vw);
+    height: min(12rem, 22vw);
+    border-radius: 0 28px 0 0;
+    background: linear-gradient(120deg, rgba(166, 185, 158, 0.16), transparent 65%);
+    pointer-events: none;
+  }
+
+  .pathway-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pathway-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: linear-gradient(to right, rgba(124, 95, 74, 0.5), rgba(124, 95, 74, 0.05));
+  }
+</style>

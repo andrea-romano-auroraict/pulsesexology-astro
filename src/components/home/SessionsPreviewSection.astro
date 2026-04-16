@@ -1,0 +1,50 @@
+<section class="section section--muted">
+  <div class="container sessions-preview panel">
+    <p class="kicker">How sessions work</p>
+    <h2 class="section__heading">Simple, steady, and at your pace</h2>
+    <div class="sessions-preview__grid">
+      <article class="card">
+        <h3>Start with a conversation</h3>
+        <p>
+          We begin by understanding what feels important for you right now, and what support would feel most helpful.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Work gently and practically</h3>
+        <p>
+          Sessions blend reflection and practical strategies so progress feels meaningful, not overwhelming.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Build lasting confidence</h3>
+        <p>
+          Over time, the aim is greater clarity, deeper connection, and a more settled relationship with intimacy and
+          change.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sessions-preview {
+    padding: clamp(1.5rem, 4vw, 2.4rem);
+  }
+
+  .sessions-preview__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .sessions-preview .card {
+    background: #f9f4ec;
+  }
+
+  @media (max-width: 900px) {
+    .sessions-preview__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
